@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <script language=javascript>
+        // var str;
+        strname=window.prompt("请输入姓名","name");
+        strpassword=window.prompt("请输入密码","password");
+        if(strname!="admin" && strname!="guest")
+            alert("没有此用户!");
+        else if((strname=="admin" && strpassword=="123456")||(strname=="guest" && strpasssword=="1234"))
+            alert("您好，"+strname+"欢迎您!");
+        else
+            alert("用户名与密码不匹配!");
+    </script>
+
+</body>
+</html>
