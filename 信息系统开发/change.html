@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="" name="fm">
+    <input type="button" value="确定" onclick="describe()">
+    <a href="http://baidu.com" onmouseover=alert('鼠标移过来')>单击我</a>
+    <br>
+    请输入姓名：<input type="text" name="txt1" onchange="check()">
+</form>
+<script>
+    function describe(){
+        alert('您触发了单击事件');
+    }
+    function check(){
+        var str=fm.txt1.value;
+        alert('名字为：'+str);
+    }
+</script>
+</body>
+</html>
