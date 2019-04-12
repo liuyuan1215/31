@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        h2 {
+            width: 150px;
+            height: 40px;
+            background: #000000;
+            color: #ffffff;
+            text-align: center;
+            line-height: 40px;
+        }
+
+        ul {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h2>1111</h2>
+    <ul>
+        <li>001</li>
+        <li>002</li>
+        <li>003</li>
+    </ul>
+    <h2>222</h2>
+    <ul>
+        <li>001</li>
+        <li>002</li>
+        <li>003</li>
+    </ul>
+    <script>
+        var aUl = document.getElementsByTagName('ul');
+        var aH2 = document.getElementsByTagName('h2');
+        // for(var i=0;i<aH2.length;i++){
+        //     aH2[i].index = i;
+        //     aH2[i].onclick = function(){
+        //         var oUl = aUl[this.index];
+        //         if(oUl.style.display=='none'||oUl.style.display==''){
+        //             oUl.style.display='block';
+        //         }else if(oUl.style.display=='block'){
+        //             oUl.style.display='none';
+        //         }
+        //     }
+        // }
+
+        for(var i=0;i<aH2.length;i++){
+            aH2[i].index = i;
+            aH2[i].flag = false;
+            aH2[i].onclick = function(){
+                var oUl = aUl[this.index];
+                if(this.flag){
+                    oUl.style.display='block';
+                }else{
+                    oUl.style.display='none';
+                }
+                this.flag = !this.flag;
+            }
+        }
+    </script>
+</body>
+</html>
