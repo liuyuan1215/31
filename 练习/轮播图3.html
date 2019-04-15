@@ -103,46 +103,46 @@
         var oPrev = document.getElementById('prev');
         var timer;
         var iNow = 0;
-        function change(num){
-            for(var i=0;i<aLi.length;i++){
+        function change(num) {
+            for (var i = 0; i < aLi.length; i++) {
                 aLi[i].className = '';
                 aImg[i].className = '';
             }
             aLi[num].className = 'active';
             aImg[num].className = 'selected';
         }
-        for(var i=0;i<aLi.length;i++){
+        for (var i = 0; i < aLi.length; i++) {
             aLi[i].index = i;
-            aLi[i].onclick = function(){
+            aLi[i].onclick = function () {
                 change[this.index];
                 iNow = this.index;
             }
         }
-        oNext.onclick = function(){
+        oNext.onclick = function () {
             iNow++;
-            if(iNow == aLi.length){
+            if (iNow == aLi.length) {
                 iNow = 0;
             }
             change(iNow);
         }
-        oPrev.onclick = function(){
+        oPrev.onclick = function () {
             iNow--;
-            if(iNow == -1){
-                iNow = aLi.length-1;
+            if (iNow == -1) {
+                iNow = aLi.length - 1;
             }
             change(iNow);
         }
         run();
-        oContainer.onmouseover = function(){
+        oContainer.onmouseover = function () {
             clearInterval(timer);
         }
-        oContainer.onmouseout = function(){
+        oContainer.onmouseout = function () {
             run();
         }
-        function run(){
-            timer = setInterval(function(){
-                oNext.onclick();
-            },1000);
+        function run() {
+            timer = setInterval(function () {
+                oNext.click();
+            }, 1000)
         }
     </script>
 </body>

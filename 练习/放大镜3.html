@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #div1 {
+            width: 400px;
+            height: 400px;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        #div2 {
+            width: 400px;
+            height: 400px;
+            overflow: hidden;
+            position: absolute;
+            top: 0;
+            left: 400px;
+            display: none;
+        }
+
+        #btn {
+            width: 150px;
+            height: 150px;
+            background: rgba(255, 255, 255, .5);
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: none;
+        }
+
+        #pic {
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="div1">
+        <img src="../imgs/f1.jpg" alt="">
+        <div id="btn"></div>
+    </div>
+    <div id="div2">
+        <img id="pic" src="../imgs/f2.jpg" alt="">
+    </div>
+    <script>
+        var oDiv1 = document.getElementById('div1');
+        var oDiv2 = document.getElementById('div2');
+        var oImg = document.getElementById('pic');
+        var oBtn = document.getElementById('btn');
+        oDiv1.onmouseover = function(e){
+            oBtn.style.display='block';
+            oDiv2.style.display='block';
+            var a=e.clientX-oBtn.offsetWidth/2;
+            var b=e.clientY-oBtn.offsetHeight/2;
+            if(a<0){
+                a=0;
+            }
+            if(b<0){
+                b=0;
+            }
+            var a1=oDiv1.offsetWidth-oBtn.offsetWidth;
+            var b1=oDiv1.offsetHeight-oBtn.offsetHeight;
+            if(a>a1){
+                a=a1;
+            }
+            if(b>b1){
+                b=b1;
+            }
+            oBtn.style.left=a+'px';
+            oBtn.style.top=b+'px';
+            var x1=oDiv1.offsetWidth-oBtn.offsetWidth;
+            var y1=oDiv1.offsetHeight-oBtn.offsetHeight;
+            var x2=oImg.offsetWidth-oDiv2.offsetWidth;
+            var y2=oImg.offsetHeight-oDiv2.offsetHeight;
+            var x3=oBtn.offsetLeft/x1;
+            var y3=oBtn.offsetTop/y1;
+            oImg.style.left=-x2*x3+'px';
+            oImg.style.top=-y2*y3+'px';
+        }
+        oDiv1.onmouseout = function(){
+            oBtn.style.display='none';
+            oDiv2.style.display='none';
+        }
+    </script>
+</body>
+
+</html>
