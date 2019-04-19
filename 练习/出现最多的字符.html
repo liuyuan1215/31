@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var str = 'asdfssaaasasasasaa';
+
+        var a = {};
+
+        for (var i = 0; i < str.length; i++) {
+
+            if (!a[str.charAt(i)]) {
+
+                a[str.charAt(i)] = 1;
+
+            } else {
+
+                a[str.charAt(i)]++;
+
+            }
+
+        }; var iMax = 0; var iIndex = ''; for (var i in a) {
+
+            if (a[i] > iMax) {
+
+                iMax = a[i];
+
+                iIndex = i;
+
+            }
+
+        } console.log('出现次数最多的是:' + iIndex + '出现' + iMax + '次');
+    </script>
+</body>
+
+</html>
